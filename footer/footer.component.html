@@ -1,0 +1,36 @@
+<footer class="footer">
+    <div class="childDiv" *ngFor="let value of footerData">  
+        <ul >
+
+            <li class="footer-nav-item">
+              <h2 class="nav-title">{{value.label}}</h2>
+            </li>
+  <div  *ngFor="let content of value.data; let index = index">
+    <li *ngIf="value.label!='Contact'"class="footer-nav-item">
+        <a href="#" class="footer-nav-link">{{content}}</a>
+      </li>
+      <li *ngIf="value.label=='Contact'"class="footer-nav-item">
+        <a href="#" class="footer-nav-link">  <i [class]="content.icon" style="    margin-right: 10px;"></i>{{content.val}}</a>
+      </li>
+
+      <!-- <li class="footer-nav-item">
+        <a href="#" class="footer-nav-link">Electronic</a>
+      </li>
+
+      <li class="footer-nav-item">
+        <a href="#" class="footer-nav-link">Cosmetic</a>
+      </li>
+
+      <li class="footer-nav-item">
+        <a href="#" class="footer-nav-link">Health</a>
+      </li>
+
+      <li class="footer-nav-item">
+        <a href="#" class="footer-nav-link">Watches</a>
+      </li> -->
+  </div>
+            
+  
+          </ul>
+    </div>
+</footer>

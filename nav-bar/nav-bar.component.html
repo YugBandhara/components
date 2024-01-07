@@ -1,0 +1,48 @@
+
+<!-- <div class="card"> -->
+    <!-- <p-menubar [model]="items"></p-menubar> -->
+ <div class="navBar">
+    <div class="navElements">
+            <p-button label="HOME"  ></p-button>
+    </div>
+    <div class="navElements" >
+        <p-overlayPanel #op [style]="{ width: '40%', 'border-radius':'10px' }">
+            <ng-template pTemplate="content">
+                <app-category-dialogue [type]="typeOfCategory"></app-category-dialogue>
+            </ng-template>
+        </p-overlayPanel>
+            <p-button (click)="op.toggle($event);settypeOfType('Category')" (onFocus) ="onfocused($event)"label="CATEGORIES" ></p-button>
+
+    </div>
+    <div class="navElements">
+        <p-overlayPanel #op1  [style]="{ width: '15%', 'border-radius':'10px' }">
+            <ng-template pTemplate="content">
+                <app-category-dialogue [type]="typeOfCategory"></app-category-dialogue>
+            </ng-template>
+        </p-overlayPanel>
+            <p-button (click)="op1.toggle($event);settypeOfType('men')" label="MEN'S" ></p-button>
+  
+    </div>
+    <div class="navElements">
+        <p-overlayPanel #op2  [style]="{ width: '15%', 'border-radius':'10px' }">
+            <ng-template pTemplate="content">
+                <app-category-dialogue [type]="typeOfCategory"></app-category-dialogue>
+            </ng-template>
+        </p-overlayPanel>
+            <p-button (click)="op2.toggle($event);settypeOfType('Women')" label="WOMEN'S" ></p-button>
+
+    </div>
+    <div class="navElements">
+
+            <p-button label="PERFUME" ></p-button>
+
+    </div>
+    <div class="navElements">
+
+            <p-button label="HOT OFFERS" ></p-button>
+
+    </div>
+ </div>
+
+
+<!-- </div> -->

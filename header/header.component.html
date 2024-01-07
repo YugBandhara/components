@@ -1,0 +1,181 @@
+<header>
+  <div class="header">
+
+
+    <div class="MediaIcons">
+      <div class="SubMediaIcons">
+
+        <a href="#" class="social-link">
+          <i class="fa fa-facebook-f"></i>
+        </a>
+        <a href="#" class="social-link">
+          <i class="fa fa-twitter-square"></i>
+        </a>
+        <a href="#" class="social-link">
+          <i class="fab fa-instagram"></i>
+        </a>
+      </div>
+
+    </div>
+
+    <div class="SpecialDeals">
+
+      <p><b>FREE SHIPPING </b>This Week Over - $55</p>
+    </div>
+    <div class="LanguageSetup">
+
+
+      <p-dropdown [style]="{'width':'25%','margin-right':'1%'}" [options]="Languages" [(ngModel)]="selectedLanguage"
+        optionLabel="name"></p-dropdown>
+      <p-dropdown [style]="{'width':'25%'}" [options]="Currencies" [(ngModel)]="selectedCurrency"
+        optionLabel="name"></p-dropdown>
+
+
+    </div>
+  </div>
+  <div class="header" style="padding: 0 12%;">
+    <div class="LogoImg">
+      <img src="../../../assets/images/AllinOne_black 2.png" style="height: 100px;">
+    </div>
+
+    <div class="SearchBar">
+
+      <span class="p-input-icon-right" style="width: 100%;">
+        <i class="pi pi-search"></i>
+        <input type="text" style="width:100%;padding:1%; border:1px solid lightgrey;border-radius: 10px;" pInputText
+          [(ngModel)]="SearchedProduct" placeholder="Enter Your Product Name ....">
+
+      </span>
+    </div>
+    <div class="Userinteraction">
+
+
+     
+  
+      <!-- <div class="UserSubMediaIcons"> -->
+
+        <a href="#" class="Userlink">
+          <i class='fas fa-user-alt' style='font-size:26px'></i>
+        </a>
+        <a href="#" class="Userlink">
+          <i class="fa fa-heart-o" style="font-size:26px;"></i>
+        </a>
+        <a href="#" class="Userlink">
+          <i class='fas fa-cart-plus' style='font-size:26px'></i>
+        </a>
+      <!-- </div> -->
+
+
+
+
+    </div>
+  </div>
+  <!-- <header class="header"> -->
+  <!-- <p-tabMenu [model]="items"></p-tabMenu> -->
+  <!-- <p-dialog header="" [resizable]="false" [(visible)]="logoutPopUp" [modal]="true" [closable]="false" [responsive]="true"
+    [style]="{width: '380px'}" [baseZIndex]="250" [draggable]="false"  >
+    <img src="../../../assets/images/logout.png">
+    <h6 class=" text-center">Are you sure you want to logout?</h6>
+    <p-footer> 
+      
+      <button type="button" class="btn btn-danger-text xxl " (click)="logoutPopUp=false"><i class="fa fa-times"></i>
+        Cancel</button>
+        <button type="button" class="btn btn-danger xxl" (click)="logoutUserOut()"><i
+          class="fa fa-check"></i> Yes, logout me</button>
+    </p-footer>
+  </p-dialog>
+  <p-dialog header="Change Password" [resizable]="false" [(visible)]="changePassword" (onHide)="close()" [modal]="true" [responsive]="true"
+    [style]="{width: '30vw'}" [baseZIndex]="250" [draggable]="false">
+    <div class="ui-g-12 logout-popup">
+      <div class="input-field mt-2">
+        <label class="mab-5" for="oldpass">Old Password<span class="mand">*</span> </label>
+        <input class="form-control mb-1" pInputText 
+          id="oldpass" placeholder="Old Password" required="" (blur)="Validation()" (keypress)="preventKey($event)"
+          type="password">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12 col-xs-12">
+        <div class="input-field mt-2">
+          <label class="mab-5" for="newpass">New Password<span class="mand">*</span></label>
+          <input class="form-control mb-1" pInputText 
+            id="newpass" placeholder="Create new Password" required="" (blur)="Validation();validatePassword(changePasswordObj.newPassword)" (keypress)="preventKey($event)" type="password">
+        </div>
+      </div>
+      <div class="col-md-12 col-xs-12" *ngIf="validatePasswordFormat">
+        <label class="error">{{validatePasswordFormat}}</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12 col-xs-12">
+        <div class="input-field mt-2">
+          <label class="mab-5" for="confpass">Confirm Password<span class="mand">*</span> </label>
+          <input class="form-control mb-1" pInputText  
+            id="confpass" placeholder="Confirm new Password" required="" (blur)="Validation()" (keypress)="preventKey($event)" type="password">
+        </div>
+      </div>
+    </div>
+    <div class="row" *ngIf="validateMessage">
+      <label class="error">{{validateMessage}}</label>
+    </div>
+    <p-footer>
+      <button type="button" class="btn btn-primary btn-first btn-popUp" (click)="submitPassword(changePasswordObj)"><i
+          class="fa fa-check"></i>
+        Submit</button>
+    </p-footer>
+  </p-dialog>
+</header> -->
+
+  <p-dialog header="" [resizable]="false" [(visible)]="logoutPopUp" [modal]="true" [closable]="false"
+    [responsive]="true" [style]="{width: '380px'}" [baseZIndex]="250" [draggable]="false">
+    <img src="../../../assets/images/logout.png">
+    <h6 class=" text-center">Are you sure you want to logout?</h6>
+    <p-footer>
+
+      <button type="button" class="btn btn-danger-text xxl " (click)="logoutPopUp=false"><i class="fa fa-times"></i>
+        Cancel</button>
+      <button type="button" class="btn btn-danger xxl" (click)="logoutUserOut()"><i class="fa fa-check"></i> Yes, logout
+        me</button>
+    </p-footer>
+  </p-dialog>
+  <p-dialog header="Change Password" [resizable]="false" [(visible)]="changePassword" (onHide)="close()" [modal]="true"
+    [responsive]="true" [style]="{width: '30vw'}" [baseZIndex]="250" [draggable]="false">
+    <div class="ui-g-12 logout-popup">
+      <div class="input-field mt-2">
+        <label class="mab-5" for="oldpass">Old Password<span class="mand">*</span> </label>
+        <input class="form-control mb-1" pInputText id="oldpass" placeholder="Old Password" required=""
+          (blur)="Validation()" (keypress)="preventKey($event)" type="password">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12 col-xs-12">
+        <div class="input-field mt-2">
+          <label class="mab-5" for="newpass">New Password<span class="mand">*</span></label>
+          <input class="form-control mb-1" pInputText id="newpass" placeholder="Create new Password" required=""
+            (blur)="Validation();validatePassword(changePasswordObj.newPassword)" (keypress)="preventKey($event)"
+            type="password">
+        </div>
+      </div>
+      <div class="col-md-12 col-xs-12" *ngIf="validatePasswordFormat">
+        <label class="error">{{validatePasswordFormat}}</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12 col-xs-12">
+        <div class="input-field mt-2">
+          <label class="mab-5" for="confpass">Confirm Password<span class="mand">*</span> </label>
+          <input class="form-control mb-1" pInputText id="confpass" placeholder="Confirm new Password" required=""
+            (blur)="Validation()" (keypress)="preventKey($event)" type="password">
+        </div>
+      </div>
+    </div>
+    <div class="row" *ngIf="validateMessage">
+      <label class="error">{{validateMessage}}</label>
+    </div>
+    <p-footer>
+      <button type="button" class="btn btn-primary btn-first btn-popUp" (click)="submitPassword(changePasswordObj)"><i
+          class="fa fa-check"></i>
+        Submit</button>
+    </p-footer>
+  </p-dialog>
+</header>

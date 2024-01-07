@@ -1,0 +1,6 @@
+
+<p-carousel [value]="Offers" [numVisible]="1" [numScroll]="1" [responsiveOptions]="responsiveOptions" [circular]="true" [autoplayInterval]="3000" [showIndicators]='false'>
+    <ng-template let-offer pTemplate="Offers">
+        <img class="OfferImg" src="{{offer.imageSrc}}">
+    </ng-template>
+</p-carousel>

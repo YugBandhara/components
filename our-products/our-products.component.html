@@ -1,0 +1,68 @@
+<div class="mainDiv">
+    <section class="categoryDiv">
+        <p-panelMenu [model]="items" [multiple]="false"></p-panelMenu>
+    </section>
+    <div class="listOfproducts">
+        <div class="filterDiv">
+            <div class="totalCount">
+                <p style="color: grey;">{{totalProductCount}} results</p>
+            </div>
+            <div class="inStock">
+                <p>In Stock </p>
+                <div style="margin:5%">
+
+                    <p-inputSwitch [(ngModel)]="checked" (onChange)="handleStockEvent($event)"></p-inputSwitch>
+                </div>
+            </div>
+            <div class="filteroption">
+                <p>Sort</p>
+                <div style="margin: 3%;">
+                    <p-dropdown [style]="{'max-width':'120%'}"  placeholder="Apply Filter" (onChange)="handleFilterEvent(selectedOptions)"[options]="FilterOptions" [(ngModel)]="selectedOptions"
+                        optionLabel="name"></p-dropdown>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+
+            <!-- <div class="card"> -->
+                <!-- <p-dataView [value]="products" [rows]="100"layout="grid"> -->
+                    <p-dataView [value]="displayProd" [paginator]="true" [rows]="15">
+                            <ng-template let-product pTemplate="listItem" >
+                                <div class="showcase">  
+                                    <div class="showcase-banner">
+                                      <img [src]="product.p_Img[0]" [alt]="product.p_name" class="product-img default">
+                                    </div>
+                    
+                                    <div class="showcase-content">
+                    
+                                      <a href="" class="showcase-category">{{product.p_name}}</a>
+                    
+                                      <a href="" style="text-decoration: none;">
+                                        <h3 class="showcase-title">{{product.p_color}}</h3>
+                                      </a>
+                    
+                                      <!-- <div class="showcase-rating">
+                                        <ion-icon name="star"></ion-icon>
+                                        <ion-icon name="star"></ion-icon>
+                                        <ion-icon name="star"></ion-icon>
+                                        <ion-icon name="star-outline"></ion-icon>
+                                        <ion-icon name="star-outline"></ion-icon>
+                                      </div> -->
+                    
+                                      <div class="price-box">
+                                        <p class="price">${{product.discount_price}}</p>
+                                        <del>${{product.original_price}}</del>
+                                      </div>
+                    
+                                    </div>
+                    
+                                  </div>
+                            </ng-template>
+                            <!-- Add content or additional styling as needed -->
+                          <!-- </div> -->
+                     
+                    <!-- </div> -->
+                </p-dataView>
+            </div>
+        
+    </div>

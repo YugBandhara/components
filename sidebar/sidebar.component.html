@@ -1,0 +1,40 @@
+<!-- <div class="container">
+  <aside class="sidebar-nav-wrapper" [@menuToggler]="sidebarToggle ? 'open' :
+    'closed'">
+    <div class="navbar-logo">
+      <a (click)="collapseList()">
+        <span *ngIf="sidebarToggle" class="text" ></span>
+      </a>
+    </div>
+    <nav class="sidebar-nav">
+      <ul>
+        <li class="nav-item" *ngFor="let item of menuLink "
+          [routerLink]="item.routerLink" routerLinkActive="active">
+          <a data-bs-toggle="tooltip" class="ui-tooltip-text"
+            data-bs-placement="right"
+            pTooltip="{{item.name}}" placeholder="Right" title=""
+            data-bs-original-title="Dashbaord">
+            <span class="icon   wobble-horizontal"  >
+              <i class="{{item.icon}}"></i>
+            </span>
+            <span class="text" *ngIf="sidebarToggle">
+              {{item.name}}
+            </span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <div class="promo-box" *ngIf="sidebarToggle">
+      <div class="login-details">Last Log-in at
+        <div class="login-details-date"> {{currentDate | date:'medium'}}</div>
+      </div>
+    </div>
+  </aside>
+</div> -->
+
+<p-sidebar [(visible)]="sidebarVisible">
+  <ng-template pTemplate="header">Header Content</ng-template>
+  <ng-template pTemplate="content">Body Content</ng-template>
+  <ng-template pTemplate="footer">Footer Content</ng-template>
+</p-sidebar>
+<p-button (click)="sidebarVisible = true" icon="pi pi-arrow-right"></p-button>
