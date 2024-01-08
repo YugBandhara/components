@@ -77,6 +77,9 @@ export class OurProductsComponent implements OnInit {
       filterProducts=this.dashboardProd
       console.log(this.dashboardProd,"dassss",filterProducts)
     }
+    if(this.selectedOptions==undefined){
+      this.displayProd=filterProducts
+    }
     if (this.selectedOptions && this.selectedOptions.name=="Price Low-high"){
       console.log("firstttt")
       this.displayProd=this.convertToAscendingByPrice(filterProducts)
