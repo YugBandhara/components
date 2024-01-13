@@ -1,6 +1,6 @@
 <div class="mainDiv">
     <section class="categoryDiv">
-        <p-panelMenu [model]="items" [multiple]="false"></p-panelMenu>
+        <p-panelMenu [model]="items" [multiple]="false" [activeItem]="selectedSubitem"></p-panelMenu>
     </section>
     <div class="listOfproducts">
         <div class="filterDiv">
@@ -40,6 +40,19 @@
                                       <a href="" style="text-decoration: none;">
                                         <h3 class="showcase-title">{{product.p_color}}</h3>
                                       </a>
+                                      <div class="addOperation">
+                                        <p-rating [ngModel]="product.p_rating" [readonly]="true" [cancel]="false"></p-rating>
+                                        <a *ngIf = "!product.isLiked;else sample" (click)="likeOperation(product.p_id,product.isLiked)" class="likeButton" >
+                                          <i class="fa fa-heart-o" style=" "></i>
+                                        </a>
+                                        <ng-template #sample>
+
+                                          <a (click)="likeOperation(product.p_id,product.isLiked)" class="likeButton"  >
+                                            <i class="fas fa-heart" style=" "></i>
+                                          </a>
+                                        </ng-template>
+                                        <i class='fas fa-cart-plus'></i>
+                                      </div>
                     
                                       <!-- <div class="showcase-rating">
                                         <ion-icon name="star"></ion-icon>

@@ -21,15 +21,19 @@ export class OurProductsComponent implements OnInit {
   public products:any=[]
   public displayProd:any=[]
   public totalProductCount:number =0
+  public selectedSubitem:any=''
   ngOnInit(): void {
     // this.primengConfig.ripple = true;
     this.products= product
+    this.selectSubitem({ label: 'Formal Shirts' })
     console.log(this.dashboardProd,"dashboardProd")
     this.dashboardProd.map((v:any)=>{
       if(v&&v.p_Img[0]){
         v.p_Img[0]=this.sanitizer.bypassSecurityTrustResourceUrl('data:image/jpeg;base64,'+v.p_Img[0]);
-        this.displayProd.push(v)
       }
+      v.p_rating=Number(v.p_rating< 4.5 ? 4.0:5.0)
+      v["isLiked"]=false
+      this.displayProd.push(v)
     })
     this.totalProductCount=this.dashboardProd.length
     console.log(this.dashboardProd,"afersdashboardProd",this.displayProd)
@@ -38,7 +42,7 @@ export class OurProductsComponent implements OnInit {
       label: 'Men Clothes',
       expanded: true,
       items: [
-          {label: 'Formal Shirts',},
+          {label: 'Formal Shirts', command: () => this.selectSubitem({ label: 'Formal Shirts' })},
           {label: 'Casual Pants'},
           {label: 'Casual T-shirts'},
           {label: 'Trousers'},
@@ -63,6 +67,10 @@ export class OurProductsComponent implements OnInit {
           {name: 'Price Low-high',},
           {name:"Highest Rated"}
       ]
+  }
+  selectSubitem(subitem: any) {
+    // console.log("sssss")
+    this.selectedSubitem = subitem;
   }
   handleStockEvent(event:any){
     console.log(event)
@@ -123,6 +131,14 @@ export class OurProductsComponent implements OnInit {
       this.displayProd=this.convertToDescendingByRating(filterProducts)
     }
     console.log(this.displayProd,"afterrrrr",this.dashboardProd)
+  }
+  likeOperation(val:any,typeofLike:any){
+    let prodData=this.displayProd
+    prodData.map((v:any)=>{
+      if (v.p_id==val){
+        v.isLiked = typeofLike ? false : true
+      }
+    })
   }
   convertToAscendingByPrice(arr:[]){
     arr.sort(function(a:any, b:any) {

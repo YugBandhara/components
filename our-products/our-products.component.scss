@@ -115,13 +115,12 @@ flex-wrap: wrap;
 :host ::ng-deep .p-dataview-content .p-grid > * {
  flex:33%;
  max-width: 33%;
- 
  border: 1px solid #ededed
 }
 
-
-
-
+:host ::ng-deep .p-rating .p-rating-icon.pi-star-fill {
+  color: gold;
+}
 
 .card {
     padding: 2rem;
@@ -129,8 +128,6 @@ flex-wrap: wrap;
     border-radius: 4px;
     margin-bottom: 2rem;
 }
-
-
 .showcase {
     border: 1px solid var(--cultured);
     border-radius: var(--border-radius-md);
@@ -229,7 +226,7 @@ flex-wrap: wrap;
     text-transform: capitalize;
     text-decoration: none;
     letter-spacing: 1px;
-    margin-bottom: 10px;
+    // margin-bottom: 10px;
     text-decoration: none;
   }
   
@@ -250,6 +247,14 @@ flex-wrap: wrap;
   }
   
   .card .price { font-weight: 700; }
+  .addOperation{
+    display: flex;
+    justify-content:space-between
+  }
+  .likeButton{
+    color: black;
+    border-color: black;
+  }
   
 //   .card del { color: var(--sonic-silver); }
   
